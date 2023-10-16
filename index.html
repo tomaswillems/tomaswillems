@@ -1,7 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="T. Willems" />
+  <meta name="dcterms.date" content="2023-06-24" />
+  <title>Suriname seabob shrimp CPUE analysis</title>
+
+<style type="text/css" charset="utf-8">
+/* cleanrmd basic defaults */
+body {
+  /* at least one is usually overridden by the theme, but these ensure the
+  body doesn't go all the way up to the screen edge */
+  margin: 0.5em auto;
+  padding: 0.5em;
+  max-width: 48em;
+}
+code, code * { font-family: inherit; }
+
+@media only screen and (max-width: 768px) {
+  body { max-width: 100%; }
+}
+</style>
+
+  
+  <link href="Seabob-CPUE_files/cleanrmd-0.1.1.9000/theme-picker.css" rel="stylesheet" />
+  <script src="Seabob-CPUE_files/cleanrmd-0.1.1.9000/theme-picker.js"></script>
+  <script id="theme-picker-themes" type="application/json">[{"name":"almond","src":"almond/almond.css"},{"name":"awsm.css","src":"awsm.css/awsm.css"},{"name":"axist","src":"axist/axist.css"},{"name":"bamboo","src":"bamboo/bamboo.css"},{"name":"bullframe","src":"bullframe/bullframe.css"},{"name":"holiday","src":"holiday/holiday.css"},{"name":"kacit","src":"kacit/kacit.css"},{"name":"latex.css","src":"latex.css/latex.css"},{"name":"markdown-splendor","src":"markdown-splendor/markdown-splendor.css"},{"name":"markdown-retro","src":"markdown-retro/markdown-retro.css"},{"name":"markdown-air","src":"markdown-air/markdown-air.css"},{"name":"markdown-modest","src":"markdown-modest/markdown-modest.css"},{"name":"marx","src":"marx/marx.css"},{"name":"minicss","src":"minicss/minicss.css"},{"name":"new.css","src":"new.css/new.css"},{"name":"no-class","src":"no-class/no-class.css"},{"name":"picocss","src":"picocss/pico.css"},{"name":"sakura","src":"sakura/sakura.css"},{"name":"sakura-vader","src":"sakura-vader/sakura-vader.css"},{"name":"semantic","src":"semantic/semantic.css"},{"name":"simplecss","src":"simplecss/simple.css"},{"name":"style-sans","src":"style-sans/style-sans.css"},{"name":"style-serif","src":"style-serif/style-serif.css"},{"name":"stylize","src":"stylize/stylize.css"},{"name":"superstylin","src":"superstylin/superstylin.css"},{"name":"tacit","src":"tacit/tacit.css"},{"name":"vanilla","src":"vanilla/vanilla.css"},{"name":"water","src":"water/water.css"},{"name":"water-dark","src":"water-dark/water-dark.css"},{"name":"writ","src":"writ/writ.css"}]</script>
+
+<style type="text/css" charset="utf-8">
+/* cleanrmd overrides */
+img { max-width: 100%; }
+</style>
+
+
+
+
+<style>
+code, pre { overflow: auto; }
+pre code, pre code:not([class]) { white-space: unset; }
+</style>
+
+
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+
+<main>
+<header>
+<h1 id="title" class="toc-ignore">Suriname seabob shrimp CPUE
+analysis</h1>
+<p id="date">2023-06-24</p>
+<p id="author">T. Willems</p>
+
+</header>
+
+
+<h2 id="seabob-shrimp-fishery-in-suriname">1. Seabob shrimp fishery in
+Suriname</h2>
+<h3 id="the-atlantic-seabob-shrimp-xiphopenaeus-kroyeri">1.1 The
+Atlantic seabob shrimp <em>Xiphopenaeus kroyeri</em></h3>
+<p>The Atlantic seabob shrimp <em>Xiphopenaeus kroyeri</em> (simply
+referred to as ‘seabob’) is a relatively small and short-lived shrimp
+species living in the shallow coastal waters on fine silt and muddy
+substrates, reaching commercial densities up to a depth of 33m in the
+Guianas. The species occurs along the Eastern coasts of North and South
+America, from 33oN to 33oZ. There are indications that the species
+reproduces year-round, with peaks in the rainy seasons (August and
+December). Observations indicate that seabob favours shallower, less
+saline near-shore waters in the dry season.</p>
+<div class="figure">
+<img src="seabob%20shrimp.jpg" alt="Atlantic seabob shrimp *Xiphopenaeus kroyeri*" width="70%" />
+<p class="caption">
+Atlantic seabob shrimp <em>Xiphopenaeus kroyeri</em>
+</p>
+</div>
+<h3 id="the-seabob-shrimp-fishery">1.2 The seabob shrimp fishery</h3>
+<p>The seabob industry uses ‘twin-rig’ shrimp trawlers which land the
+shrimp on ice to both Surinamese processing companies. The shrimp are
+peeled mechanically and frozen for export to Europa and the USA.
+Artisanal fishermen catch seabob in the river mouths using fyke nets (so
+called ‘Chinese seines’). Their catch is marketed fresh or dried for the
+local marked. This fishery lands about 500 tons per year, while the
+industrial fishery catches between 8,000 and 10,000 tons/year.</p>
+<div class="figure">
+<img src="shrimp%20trawler.jpg" alt="A seabob shrimp trawler off Suriname" width="70%" />
+<p class="caption">
+A seabob shrimp trawler off Suriname
+</p>
+</div>
+<h2 id="dynamics-of-the-seabob-trawl-fishery-2002---2022">2. Dynamics of
+the seabob trawl fishery (2002 - 2022)</h2>
+<h3 id="background-on-the-dataset">2.1 Background on the dataset</h3>
+<p>The dataset contains monthly catch and effort data of the Atlantic
+seabob shrimp <em>Xiphopenaeus kroyeri</em> industrial trawl fishery off
+Suriname, from 2002 to 2022.</p>
+<p>The data contains the following variables:</p>
+<pre><code>## [1] &quot;year&quot;        &quot;month&quot;       &quot;catch_pw_kg&quot; &quot;effort_das&quot;  &quot;obs_cpue&quot;   
+## [6] &quot;hcr_cpue&quot;    &quot;month_txt&quot;</code></pre>
+<p>Catch weights are represented in processed (peeled and beheaded)
+weight, in kilograms, as received from the fishing industry. Effort is
+represented as days-at-sea, calculated by the formula <em>departure date
+- arrival data + 1</em>. <em>Obs_cpue</em> is the catch divided by
+effort, while <em>hcr_cpue</em> is the cpue index used in the fisheries’
+harvest control rule (HCR). <em>month</em> and <em>month_text</em>
+represent the month by numbers (1-12) and text (Jan, Feb,..)
+respectivly.</p>
+<p>Here is a glimpse of the dataset:</p>
+<pre><code>## # A tibble: 6 × 7
+##    year month catch_pw_kg effort_das obs_cpue hcr_cpue month_txt
+##   &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;ord&gt;    
+## 1  2002     1     325688.        388     838.     838. Jan      
+## 2  2002     2     415042.        454     914.     914. Feb      
+## 3  2002     3     428434.        421    1018.     992. Mar      
+## 4  2002     4     405034.        435     930.     946. Apr      
+## 5  2002     5     331839.        374     888.     902. May      
+## 6  2002     6     299650.        380     788.     816. Jun</code></pre>
+<h3 id="some-data-exploration">2.2 Some data exploration</h3>
+<p>First, lets look at yearly catch and effort between 2002 and
+2022.</p>
+<p><img src="Seabob-CPUE_files/figure-html5/unnamed-chunk-4-1.png" width="576" /></p>
+<p>Now, let’s explore yearly catch-per-unit-effort (CPUE).</p>
+<p><img src="Seabob-CPUE_files/figure-html5/unnamed-chunk-5-1.png" width="576" /></p>
+<p>The graph below summarizes the CPUE per month, over the period
+2002-2022.</p>
+<p><img src="Seabob-CPUE_files/figure-html5/unnamed-chunk-6-1.png" width="576" /></p>
+
+</main>
+
+
+
 </body>
 </html>
